@@ -1,5 +1,6 @@
 <template>
 	<div class="bag clearfix">
+		<span class="close"></span>
 		<div class="bag-left">
 			<!--头像-->
 			<div class="bag-head clearfix">
@@ -115,28 +116,13 @@ export default {
   	}
   },
   mounted(){
-		var equip = document.getElementsByClassName('equipment');
-		for(var j=0;j<equip.length;j++)
-		{
-			var ele = equip[j].getElementsByTagName('li');
-			for(var i=0;i<ele.length;i++)
-			{
-				ele[i].addEventListener('mouseover',function(event){
-					var mes = event.target.childNodes[0];
-					if(mes.classList.value == 'equipment-mes'){
-						mes.style.display = 'block';
-					}
-					
-				})
-				ele[i].addEventListener('mouseout',function(event){
-					var mes = event.target.childNodes[0];
-					if(mes.classList.value == 'equipment-mes'){
-						mes.style.display = 'none';
-					}
-				})
-			}
-		}
-		
+		$('.equipment li').on('mouseover',function(){
+			$(this).find('.equipment-mes').show();
+		})
+		$('.equipment li').on('mouseout',function(){
+			$(this).find('.equipment-mes').hide();
+		})
+			
   },
   methods:{
 	

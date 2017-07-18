@@ -10,7 +10,7 @@ export default new Router({
   routes: [
  		{
       path: '*',
-      redirect: '/bigMap'
+      redirect: '/cityMap'
     },
     {//世界地图
       path: '/bigMap',

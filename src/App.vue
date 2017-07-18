@@ -20,18 +20,23 @@
     <!--右侧菜单-->
     
     <!--背包-->
-    <bag v-show="1"></bag>
+    <bag v-show=""></bag>
     <!--背包-->
+    
+    <!--武将列表-->
+    <mans-list v-show=""></mans-list>
+    <!--武将列表-->
   </div>
 </template>
 
 <script>
 	import bag from './components/bag/bag'
+	import mansList from './components/mans/list'
 export default {
   name: 'app',
   data(){
   	return{
-  		dom:''
+  		
   	}
   },
   mounted:function(){
@@ -45,7 +50,8 @@ export default {
 			
   },
   components: {
-    bag
+    bag,
+    mansList
 	},
   methods:{
 
