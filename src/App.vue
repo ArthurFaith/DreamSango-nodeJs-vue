@@ -1,30 +1,26 @@
 <template>
-  <div id="app">
-  	
+  <div id="app">	
   	<!--主界面-->
  		<div class="app-content">
- 			<div class="app-money">
- 				<!--金钱、木材、武将数-->
- 			</div>
  			<router-view></router-view>
  		</div>
  		<!--主界面-->
  		
  		<!--右侧菜单-->
-    <div class="app-menu">
-    	<div class="app-mans">
-    		<!--武将列表-->
-    		
-    	</div>
+    <div class="app-menu" align="right">
+    	<router-link to="/cityMap"><div class="app-item menu-center mt50"></div></router-link>
+    	<router-link to="/carbonList"><div class="app-item menu-maps"></div></router-link>
+    	<div class="app-item menu-mans" @click="openMans()"></div>
+    	<div class="app-item menu-bag" @click="openBag()"></div>
     </div>
     <!--右侧菜单-->
     
     <!--背包-->
-    <bag v-show=""></bag>
+    <bag v-show="bagType" v-on:closeBagEvent="emitCloseBagEvent"></bag>
     <!--背包-->
     
     <!--武将列表-->
-    <mans-list v-show=""></mans-list>
+    <mans-list v-show="mansType" v-on:closeListEvent="emitCloseListEvent"></mans-list>
     <!--武将列表-->
   </div>
 </template>
@@ -36,7 +32,8 @@ export default {
   name: 'app',
   data(){
   	return{
-  		
+  		bagType:false,//背包状态
+  		mansType:false,//武将列表状态
   	}
   },
   mounted:function(){
@@ -54,7 +51,28 @@ export default {
     mansList
 	},
   methods:{
-
+		openBag(){
+				this.bagType = !this.bagType;
+				//this.$router.push('CarbonMap') 路由跳转
+					
+			},
+		openMans(){
+			this.mansType = !this.mansType;
+		},
+		closeBag(){
+			this.bagType = false;
+		},
+		closeMans(){
+			this.mansType = false;
+		},
+		emitCloseBagEvent(data){
+			//触发子组件传递的事件
+			this.bagType = data;
+		},
+		emitCloseListEvent(data){
+			this.mansType = false;
+		}
+			
   }
 }
 </script>

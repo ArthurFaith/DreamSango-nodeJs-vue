@@ -13,6 +13,7 @@
 	width: 840px;
 	height: 700px;
 	background: #fff;
+	border-radius: 4px;
 	/*overflow: hidden;*/
 }
 
@@ -20,9 +21,9 @@
 	position: absolute;
 	right: 0;top: 50%;
 	margin-top:-250px;
-	width: 100px;
+	width: 140px;
 	height: 500px;
-	background: #fff;
+	background: url('../assets/icon/menu.png') no-repeat center;
 }
 
 .app-money{
@@ -31,10 +32,26 @@
 	background: #F0F0F0;
 }
 
-.app-mans{
-	width: 100px;
-	height: 100px;
-	background: #000;	
+.app-item{
+	width: 120px;
+	height: 100px;	
+	cursor: pointer;
+}
+
+.menu-mans{
+	background:url('../assets/icon/mans.png') no-repeat center;
+}
+
+.menu-maps{
+	background:url('../assets/icon/copyMap.png') no-repeat center;
+}
+
+.menu-center{
+	background:url('../assets/icon/center.png') no-repeat center;
+}
+
+.menu-bag{
+	background:url('../assets/icon/bag.png') no-repeat center;
 }
 
 .map{
@@ -56,13 +73,15 @@
 	margin-top: -330px;
 	width: 860px;
 	height: 660px;
-	background: #252830;
+	background: rgba(37,40,48,0.9);
+	/*background: url('../assets/bagbg.png') no-repeat;*/
 	border-radius: 8px;
 	/*padding: 10px;*/
 	/*去除元素间隙*/
 	font-size: 0;
     -webkit-text-size-adjust:none;
     color: #fff;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
 }
 
 .bag-left{
@@ -117,6 +136,7 @@
 	margin: 0 10px 10px 0;
 	cursor: pointer;
 	display: inline-block;
+	/*overflow: hidden;*/
 }
 
 .bag-equip ul li:hover{
@@ -173,6 +193,13 @@
 	white-space:nowrap; /*强制不换行*/
 }
 
+.equip-box{
+	width: 60px;
+	height: 60px;	
+	border-radius: 6px;
+	overflow: hidden;
+}
+
 /*武将列表*/
 .mans{
 	position: absolute;
@@ -180,7 +207,7 @@
 	margin-top: -330px;
 	width: 350px;
 	height: 620px;
-	background: #252830;
+	background: rgba(37,40,48,0.9);
 	padding: 10px 20px 20px 20px;
 	border-radius: 8px;
 	/*padding: 10px;*/
@@ -199,7 +226,7 @@
 	width: 510px;
 	height: 260px;
 	padding: 20px;
-	background: #252830;
+	background: rgba(37,40,48,0.9);
 	border-radius: 8px;
 	/*padding: 10px;*/
 	/*去除元素间隙*/
@@ -228,30 +255,44 @@
 	text-align: center;
 }
 .remove{
-	background: url('../assets/btn1.png') no-repeat left top;
+	background: url('../assets/icon/btn1.png') no-repeat left top;
 	background-size: 80px 30px;
+	cursor: pointer;
 }
 .upgrade{
-	background: url('../assets/btn2.png') no-repeat left top;
+	background: url('../assets/icon/btn2.png') no-repeat left top;
 	background-size: 80px 30px;
+	cursor: pointer;
 }
 
 .close{
-	width: 15px;height: 15px;
+	width: 24px;height: 24px;
 	position: absolute;
-	top: 10px;right: 10px;
-	background: url('../assets/close.png') no-repeat center;
-	background-size: 15px 15px;
+	top: 6px;right: 6px;
+	background: url('../assets/icon/close.png') no-repeat center;
+	background-size: 24px 24px;
 	cursor: pointer;
 	display: block;
 }
 
 .recruit{
-	font-size: 14px;
-	color:#fff;
+	position: absolute;
+	top:140px;left: 50%;
+	margin-left: -360px;
+	width: 680px;
+	height: 260px;
+	padding: 20px;
+	background: rgba(37,40,48,0.9);
+	border-radius: 8px;
+	/*padding: 10px;*/
+	/*去除元素间隙*/
+	font-size: 0;
+    -webkit-text-size-adjust:none;
+    color: #fff;
+/*	font-size: 14px;*/
 }
 
-.recruit-left{
+.recruit-middle{
 	width: 180px;
 	height: 180px;
 	float: left;
@@ -289,11 +330,11 @@
 .shop{
 	position: absolute;
 	top:60px;left: 50%;
-	margin-left: -340px;
-	width: 640px;
+	margin-left: -440px;
+	width: 840px;
 	height: 410px;
 	padding: 10px 20px;
-	background: #252830;
+	background: rgba(37,40,48,0.9);
 	border-radius: 8px;
 	/*padding: 10px;*/
 	/*去除元素间隙*/
@@ -302,10 +343,11 @@
     color: #fff;
 }
 
-.shop-left{
+.shop-middle{
 	width: 300px;
 	height: auto;
 	float: left;
+	margin-left: 20px;
 }
 
 .shop-right{
@@ -323,3 +365,53 @@
 	text-align: center;
 	cursor: pointer;
 }
+
+/*战斗系统界面*/
+.battle{
+	width: 100%;
+	height: 700px;
+	overflow: hidden;
+	background: rgba(37,40,48,0.9);
+	/*background: url('../assets/bagbg.png') no-repeat;*/
+	/*去除元素间隙*/
+	font-size: 0;
+    -webkit-text-size-adjust:none;
+    color: #fff;
+}
+
+.battle-left{
+	width: 280px;
+	height: 330px;
+	float: left;
+	padding: 20px;
+	/*border-right: 1px solid #fff;*/
+}
+
+.battle-right{
+	width: 280px;
+	height: 330px;
+	float: right;
+	padding: 20px;
+}
+
+.battle-hp{
+	margin-top: 8px;
+	width: 200px;
+	height: 20px;
+	/*background: #be0004;*/
+	background: rgba(0,0,0,0.4);
+	border-radius: 4px;
+	position: relative;
+}
+
+.battle-mp{
+	margin-top: 2px;
+	width: 200px;
+	height: 20px;
+	background: rgba(0,0,0,0.4);
+	border-radius: 4px;
+	/*background: #0086c3;*/
+	position: relative;
+}
+
+

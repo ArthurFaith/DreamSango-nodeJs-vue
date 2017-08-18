@@ -1,6 +1,6 @@
 <template>
 	<div class="mans">
-		<span class="close"></span>
+		<span class="close" @click="closeList()"></span>
 		<div class="bag-equip">
 				<div class="bag-equip-title">
 					武将
@@ -28,7 +28,9 @@
 			
 		},
 		methods:{
-			
+			closeList(){
+				this.$emit('closeListEvent',false)
+			}
 		}
 	}
 </script>

@@ -445,7 +445,9 @@ li{
 	margin-top: 70px !important;
 }
 
-
+.mt100 {
+	margin-top: 100px !important;
+}
 /*顶部外边距样式end*/
 
 
@@ -916,3 +918,26 @@ dd {
 
 
 /*定义常用公共样式end*/
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-success{
+	color: #ffffff !important;
+    background-color: #27c24c;
+    border-color: #27c24c;
+}

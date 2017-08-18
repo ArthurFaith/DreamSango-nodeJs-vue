@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import BigMap from '@/components/map/bigMap'
+import CarbonList from '@/components/map/carbonList'
 import CityMap from '@/components/map/cityMap'
 import CarbonMap from '@/components/map/carbonMap'
+import Battle from '@/components/battle/battle'
 
 Vue.use(Router)
 
@@ -13,9 +14,9 @@ export default new Router({
       redirect: '/cityMap'
     },
     {//世界地图
-      path: '/bigMap',
-      name: 'BigMap',
-      component: BigMap
+      path: '/carbonList',
+      name: 'CarbonList',
+      component: CarbonList
     },
     {//城市地图
       path: '/cityMap',
@@ -26,7 +27,14 @@ export default new Router({
       path: '/carbonMap',
       name: 'CarbonMap',
       component: CarbonMap
+    },
+    {//战斗界面
+      path: '/battle',
+      name: 'Battle',
+      component: Battle
     }
   
   
 ]})
+
+

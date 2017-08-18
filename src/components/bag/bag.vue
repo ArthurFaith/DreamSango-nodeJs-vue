@@ -1,6 +1,6 @@
 <template>
 	<div class="bag clearfix">
-		<span class="close"></span>
+		<span class="close" @click="closeBag()"></span>
 		<div class="bag-left">
 			<!--头像-->
 			<div class="bag-head clearfix">
@@ -16,6 +16,7 @@
 				</div>
 				<ul class="equipment">
 					<li v-for="x in 8">
+						<div class="equip-box"></div>
 						<div class="equipment-mes">						
 							<p>生命值+10</p>
 							<p>生命值+10</p>
@@ -33,6 +34,10 @@
 				</div>
 				<ul class="equipment">
 					<li v-for="x in 4">
+						<div class="equip-box">
+							<img src="../../assets/6.png"/>
+						</div>
+						
 						<div class="equipment-mes">						
 							<p>生命值+10</p>
 							<p>生命值+10</p>
@@ -116,7 +121,7 @@ export default {
   	}
   },
   mounted(){
-		$('.equipment li').on('mouseover',function(){
+		$('.equipment li').on('mouseover',function(){			
 			$(this).find('.equipment-mes').show();
 		})
 		$('.equipment li').on('mouseout',function(){
@@ -125,7 +130,9 @@ export default {
 			
   },
   methods:{
-	
+	closeBag(){
+		this.$emit('closeBagEvent',false)
+	}
   }
 }
 </script>

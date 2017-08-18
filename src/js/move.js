@@ -8,8 +8,8 @@ var move = {
 	directionMove : function(position,event){
 		var x = event.keyCode,
 			tw = position.totalWidth,
+			th = position.totalHeight,
 			w = position.width;
-			console.log(event)
 		switch (x){
 			case 37:
 			//左
@@ -54,10 +54,10 @@ var move = {
 				
 			case 40:
 			//下
-				if(position.top == (tw-w)){
+				if(position.top == (th-w)){
 					break;
 				}
-				else if(position.top>(tw-w) && position.top<=tw){
+				else if(position.top>(th-w) && position.top<=th){
 					position.top = 0;
 					break;
 				}
